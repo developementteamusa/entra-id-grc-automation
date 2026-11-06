@@ -1,0 +1,215 @@
+{
+  "project": "Microsoft Entra ID Automated Identity Governance Audit",
+  "source": "demo",
+  "tenant_id": "SYNTHETIC-EXAMPLE-NO-LIVE-CONNECTION",
+  "collected_at_utc": "2026-11-06T12:00:00+00:00",
+  "generated_at_utc": "2026-11-06T19:47:28.604760+00:00",
+  "scope": "All tenant users; all groups counted; direct membership of prefix-matched groups only",
+  "group_prefix": "sg-lab-",
+  "metrics": {
+    "total_users": 8,
+    "total_groups": 6,
+    "scoped_groups": 5,
+    "scoped_direct_membership_edges": 8,
+    "non_user_members": 0,
+    "findings_total": 4,
+    "findings_by_severity": {
+      "HIGH": 0,
+      "MEDIUM": 2,
+      "LOW": 2,
+      "INFO": 0
+    }
+  },
+  "users": [
+    {
+      "id": "u-01",
+      "displayName": "Alex Example",
+      "userPrincipalName": "alex.admin@example.test",
+      "department": "IT",
+      "jobTitle": "Administrator",
+      "accountEnabled": true
+    },
+    {
+      "id": "u-02",
+      "displayName": "Avery Example",
+      "userPrincipalName": "avery.it@example.test",
+      "department": "IT",
+      "jobTitle": "Support Analyst",
+      "accountEnabled": true
+    },
+    {
+      "id": "u-03",
+      "displayName": "Jordan Example",
+      "userPrincipalName": "jordan.it@example.test",
+      "department": "IT",
+      "jobTitle": "IT Specialist",
+      "accountEnabled": false
+    },
+    {
+      "id": "u-04",
+      "displayName": "Casey Example",
+      "userPrincipalName": "casey.eng@example.test",
+      "department": "Engineering",
+      "jobTitle": "Engineer",
+      "accountEnabled": true
+    },
+    {
+      "id": "u-05",
+      "displayName": "Taylor Example",
+      "userPrincipalName": "taylor.eng@example.test",
+      "department": "Engineering",
+      "jobTitle": "Developer",
+      "accountEnabled": true
+    },
+    {
+      "id": "u-06",
+      "displayName": "Morgan Example",
+      "userPrincipalName": "morgan.fin@example.test",
+      "department": "Finance",
+      "jobTitle": "Analyst",
+      "accountEnabled": true
+    },
+    {
+      "id": "u-07",
+      "displayName": "Harper Example",
+      "userPrincipalName": "harper.hr@example.test",
+      "department": null,
+      "jobTitle": "HR Specialist",
+      "accountEnabled": true
+    },
+    {
+      "id": "u-08",
+      "displayName": "Reese Example",
+      "userPrincipalName": "reese@example.test",
+      "department": "Operations",
+      "jobTitle": "Coordinator",
+      "accountEnabled": true
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-admin",
+      "displayName": "sg-lab-admins",
+      "securityEnabled": true
+    },
+    {
+      "id": "g-eng",
+      "displayName": "sg-lab-engineering",
+      "securityEnabled": true
+    },
+    {
+      "id": "g-fin",
+      "displayName": "sg-lab-finance",
+      "securityEnabled": true
+    },
+    {
+      "id": "g-hr",
+      "displayName": "sg-lab-hr",
+      "securityEnabled": true
+    },
+    {
+      "id": "g-it",
+      "displayName": "sg-lab-it",
+      "securityEnabled": true
+    }
+  ],
+  "memberships": {
+    "g-admin": [
+      {
+        "id": "u-01",
+        "@odata.type": "#microsoft.graph.user"
+      }
+    ],
+    "g-eng": [
+      {
+        "id": "u-04",
+        "@odata.type": "#microsoft.graph.user"
+      },
+      {
+        "id": "u-05",
+        "@odata.type": "#microsoft.graph.user"
+      }
+    ],
+    "g-fin": [
+      {
+        "id": "u-06",
+        "@odata.type": "#microsoft.graph.user"
+      }
+    ],
+    "g-hr": [
+      {
+        "id": "u-07",
+        "@odata.type": "#microsoft.graph.user"
+      }
+    ],
+    "g-it": [
+      {
+        "id": "u-01",
+        "@odata.type": "#microsoft.graph.user"
+      },
+      {
+        "id": "u-02",
+        "@odata.type": "#microsoft.graph.user"
+      },
+      {
+        "id": "u-03",
+        "@odata.type": "#microsoft.graph.user"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "GRC-D2778EF26574",
+      "rule": "DISABLED_ACCOUNT_IN_GROUP",
+      "severity": "MEDIUM",
+      "subject": "jordan.it@example.test",
+      "evidence": "Disabled user remains a direct member of sg-lab-it",
+      "why_review": "Stale group membership can complicate account lifecycle governance; this does not imply the account can sign in.",
+      "recommended_action": "Confirm retention needs and remove unnecessary memberships through approved change management.",
+      "control_references": [
+        "AC-2"
+      ],
+      "status": "Requires human review"
+    },
+    {
+      "id": "GRC-B57704188513",
+      "rule": "SENSITIVE_GROUP_MEMBER_REVIEW",
+      "severity": "MEDIUM",
+      "subject": "alex.admin@example.test",
+      "evidence": "Direct member of policy-designated sensitive group sg-lab-admins",
+      "why_review": "Access to this designated group requires documented owner approval; a group name alone does not establish an Entra directory role.",
+      "recommended_action": "Confirm business justification and capture group-owner attestation.",
+      "control_references": [
+        "AC-6"
+      ],
+      "status": "Requires human review"
+    },
+    {
+      "id": "GRC-0C40096F4B40",
+      "rule": "CROSS_GROUP_REVIEW",
+      "severity": "LOW",
+      "subject": "alex.admin@example.test",
+      "evidence": "Direct memberships: sg-lab-admins, sg-lab-it",
+      "why_review": "Overlapping access may be justified; review for least privilege rather than treating it as a violation.",
+      "recommended_action": "Ask the application/group owner to validate both memberships.",
+      "control_references": [
+        "AC-6"
+      ],
+      "status": "Requires human review"
+    },
+    {
+      "id": "GRC-5D6E2CE6A17B",
+      "rule": "MISSING_USER_ATTRIBUTE",
+      "severity": "LOW",
+      "subject": "harper.hr@example.test",
+      "evidence": "Required field 'department' is blank",
+      "why_review": "Missing identity metadata can reduce accuracy of access recertification.",
+      "recommended_action": "Confirm attribute ownership and update after validation.",
+      "control_references": [
+        "AC-2"
+      ],
+      "status": "Requires human review"
+    }
+  ],
+  "disclaimer": "Review indicators only. Not a compliance certification, sign-in/MFA assessment, or proof of privileged directory roles. Microsoft Graph v1.0 group-members endpoint has known service-principal visibility limitations."
+}

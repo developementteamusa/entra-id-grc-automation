@@ -1,0 +1,15 @@
+{
+  "description": "Demonstration review criteria; adjust with your organization's approved access policy.",
+  "group_prefix": "sg-lab-",
+  "sensitive_group_names": ["sg-lab-admins"],
+  "required_user_attributes": ["department"],
+  "baseline": {
+    "total_users": 8,
+    "total_groups": 6,
+    "scoped_groups": 5,
+    "direct_member_counts": {
+      "sg-lab-admins": 1,
+      "sg-lab-it": 3
+    }
+  }
+}

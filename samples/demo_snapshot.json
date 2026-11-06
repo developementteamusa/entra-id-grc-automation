@@ -1,0 +1,32 @@
+{
+  "source": "demo",
+  "tenant_id": "SYNTHETIC-EXAMPLE-NO-LIVE-CONNECTION",
+  "collected_at_utc": "2026-11-06T12:00:00+00:00",
+  "membership_scope": "direct",
+  "group_prefix": "sg-lab-",
+  "users": [
+    {"id":"u-01","displayName":"Alex Example","userPrincipalName":"alex.admin@example.test","department":"IT","jobTitle":"Administrator","accountEnabled":true},
+    {"id":"u-02","displayName":"Avery Example","userPrincipalName":"avery.it@example.test","department":"IT","jobTitle":"Support Analyst","accountEnabled":true},
+    {"id":"u-03","displayName":"Jordan Example","userPrincipalName":"jordan.it@example.test","department":"IT","jobTitle":"IT Specialist","accountEnabled":false},
+    {"id":"u-04","displayName":"Casey Example","userPrincipalName":"casey.eng@example.test","department":"Engineering","jobTitle":"Engineer","accountEnabled":true},
+    {"id":"u-05","displayName":"Taylor Example","userPrincipalName":"taylor.eng@example.test","department":"Engineering","jobTitle":"Developer","accountEnabled":true},
+    {"id":"u-06","displayName":"Morgan Example","userPrincipalName":"morgan.fin@example.test","department":"Finance","jobTitle":"Analyst","accountEnabled":true},
+    {"id":"u-07","displayName":"Harper Example","userPrincipalName":"harper.hr@example.test","department":null,"jobTitle":"HR Specialist","accountEnabled":true},
+    {"id":"u-08","displayName":"Reese Example","userPrincipalName":"reese@example.test","department":"Operations","jobTitle":"Coordinator","accountEnabled":true}
+  ],
+  "groups": [
+    {"id":"g-dev","displayName":"Example_Development","securityEnabled":true},
+    {"id":"g-admin","displayName":"sg-lab-admins","securityEnabled":true},
+    {"id":"g-eng","displayName":"sg-lab-engineering","securityEnabled":true},
+    {"id":"g-fin","displayName":"sg-lab-finance","securityEnabled":true},
+    {"id":"g-hr","displayName":"sg-lab-hr","securityEnabled":true},
+    {"id":"g-it","displayName":"sg-lab-it","securityEnabled":true}
+  ],
+  "memberships": {
+    "g-admin":[{"id":"u-01","@odata.type":"#microsoft.graph.user"}],
+    "g-eng":[{"id":"u-04","@odata.type":"#microsoft.graph.user"},{"id":"u-05","@odata.type":"#microsoft.graph.user"}],
+    "g-fin":[{"id":"u-06","@odata.type":"#microsoft.graph.user"}],
+    "g-hr":[{"id":"u-07","@odata.type":"#microsoft.graph.user"}],
+    "g-it":[{"id":"u-01","@odata.type":"#microsoft.graph.user"},{"id":"u-02","@odata.type":"#microsoft.graph.user"},{"id":"u-03","@odata.type":"#microsoft.graph.user"}]
+  }
+}

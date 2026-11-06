@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leon_Identity Governance Audit — demo</title>
+    <style>
+      :root {
+        --navy: #12243a;
+        --teal: #0f807b;
+        --muted: #637288;
+        --line: #e5eaf0;
+        --bg: #f4f7fb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        font:
+          14px/1.55 system-ui,
+          -apple-system,
+          Segoe UI,
+          sans-serif;
+        color: var(--navy);
+      }
+      .wrap {
+        max-width: 1250px;
+        margin: auto;
+        padding: 28px 25px 70px;
+      }
+      header {
+        background: var(--navy);
+        color: white;
+        padding: 40px 0;
+      }
+      header .wrap {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+        color: #82e1d2;
+        font-size: 12px;
+      }
+      h1 {
+        font-size: clamp(25px, 3.4vw, 39px);
+        line-height: 1.12;
+        margin: 11px 0;
+      }
+      h2 {
+        font-size: 20px;
+        margin: 28px 0 12px;
+      }
+      p {
+        margin: 8px 0;
+      }
+      .meta {
+        color: #bed0e0;
+        font-size: 13px;
+      }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 22px;
+      }
+      .metric,
+      .panel {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 20px;
+      }
+      .metric span {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .metric strong {
+        font-size: 30px;
+      }
+      .severities {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .severity {
+        flex: 1;
+        min-width: 120px;
+        border-radius: 10px;
+        padding: 14px 17px;
+        background: white;
+        border: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .severity strong {
+        font-size: 21px;
+      }
+      .pill {
+        display: inline-block;
+        border-radius: 100px;
+        padding: 4px 9px;
+        font-weight: 750;
+        font-size: 11px;
+      }
+      .high {
+        color: #9e2631;
+        background: #fce7e8;
+      }
+      .medium {
+        color: #865000;
+        background: #fff2db;
+      }
+      .low {
+        color: #22599b;
+        background: #e7f1ff;
+      }
+      .info {
+        color: #526274;
+        background: #e8edf1;
+      }
+      .table-wrap {
+        overflow-x: auto;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 1020px;
+        text-align: left;
+      }
+      th {
+        background: #edf3f8;
+        color: #2a4158;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      th,
+      td {
+        border-bottom: 1px solid var(--line);
+        padding: 12px 14px;
+        vertical-align: top;
+      }
+      td {
+        max-width: 370px;
+        overflow-wrap: anywhere;
+      }
+      tr:last-child td {
+        border-bottom: 0;
+      }
+      small {
+        display: block;
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 3px;
+      }
+      .note {
+        border-left: 3px solid var(--teal);
+        padding: 6px 14px;
+        color: #455b72;
+        background: #f1fbfa;
+      }
+      footer {
+        margin-top: 30px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      @media (max-width: 700px) {
+        .metrics {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .wrap {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+      }
+      @media print {
+        body {
+          background: #fff;
+        }
+        header {
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+        .table-wrap {
+          overflow: visible;
+        }
+        table {
+          min-width: 0;
+          font-size: 10px;
+        }
+        .wrap {
+          max-width: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <div class="eyebrow">Microsoft Entra ID Governance • Identity Security • GRC Evidence</div>
+        <h1>Leon's Automated Identity Governance Audit</h1>
+        <p>Microsoft Entra ID · Read-only identity and group access review</p>
+        <p class="meta">
+          Source: DEMO &nbsp; | &nbsp; Collected (UTC):
+          2026-11-06T12:00:00+00:00 &nbsp; | &nbsp; Tenant:
+          SYNTHETIC-LEARN-LIKE-LEON-LIVE-CONNECTION
+        </p>
+      </div>
+    </header>
+    <main class="wrap">
+      <div class="metrics">
+        <div class="metric"><span>Users</span><strong>8</strong></div>
+        <div class="metric"><span>Total groups</span><strong>6</strong></div>
+        <div class="metric"><span>Scoped groups</span><strong>5</strong></div>
+        <div class="metric"><span>Review findings</span><strong>4</strong></div>
+      </div>
+      <h2>Review severity breakdown</h2>
+      <div class="severities">
+        <div class="severity high"><b>HIGH</b><strong>0</strong></div>
+        <div class="severity medium"><b>MEDIUM</b><strong>2</strong></div>
+        <div class="severity low"><b>LOW</b><strong>2</strong></div>
+        <div class="severity info"><b>INFO</b><strong>0</strong></div>
+      </div>
+      <h2>Audit findings and recommended actions</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Severity</th>
+              <th>Check / ID</th>
+              <th>Subject</th>
+              <th>Evidence</th>
+              <th>Review action</th>
+              <th>NIST mapping</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="pill medium">MEDIUM</span></td>
+              <td>
+                <b>DISABLED ACCOUNT IN GROUP</b><small>GRC-D2778EF26574</small>
+              </td>
+              <td>jordan.it@example.test</td>
+              <td>Disabled user remains a direct member of sg-lab-it</td>
+              <td>
+                Confirm retention needs and remove unnecessary memberships
+                through approved change management.
+              </td>
+              <td>AC-2</td>
+            </tr>
+            <tr>
+              <td><span class="pill medium">MEDIUM</span></td>
+              <td>
+                <b>SENSITIVE GROUP MEMBER REVIEW</b
+                ><small>GRC-B57704188513</small>
+              </td>
+              <td>alex.admin@example.test</td>
+              <td>
+                Direct member of policy-designated sensitive group sg-lab-admins
+              </td>
+              <td>
+                Confirm business justification and capture group-owner
+                attestation.
+              </td>
+              <td>AC-6</td>
+            </tr>
+            <tr>
+              <td><span class="pill low">LOW</span></td>
+              <td><b>CROSS GROUP REVIEW</b><small>GRC-0C40096F4B40</small></td>
+              <td>alex.admin@example.test</td>
+              <td>Direct memberships: sg-lab-admins, sg-lab-it</td>
+              <td>
+                Ask the application/group owner to validate both memberships.
+              </td>
+              <td>AC-6</td>
+            </tr>
+            <tr>
+              <td><span class="pill low">LOW</span></td>
+              <td>
+                <b>MISSING USER ATTRIBUTE</b><small>GRC-5D6E2CE6A17B</small>
+              </td>
+              <td>harper.hr@example.test</td>
+              <td>Required field &#x27;department&#x27; is blank</td>
+              <td>Confirm attribute ownership and update after validation.</td>
+              <td>AC-2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2>Methodology and limitations</h2>
+      <section class="panel">
+        <p>
+          <b>Coverage:</b> All tenant users; all groups counted; direct
+          membership of prefix-matched groups only. Group prefix:
+          <code>sg-lab-</code>.
+        </p>
+        <p>
+          <b>What this report can support:</b> Account lifecycle hygiene checks
+          (AC-2) and owner review of selected group access (AC-6). Severity is a
+          local prioritization heuristic, not a formal risk assessment.
+        </p>
+        <p>
+          <b>What it does not establish:</b> Whether access was unauthorized,
+          MFA state, interactive sign-in recency, effective permissions,
+          transitive/nested group membership, or Entra administrative role
+          assignments.
+        </p>
+        <p class="note">
+          Review indicators only. Not a compliance certification, sign-in/MFA
+          assessment, or proof of privileged directory roles. Microsoft Graph
+          v1.0 group-members endpoint has known service-principal visibility
+          limitations.
+        </p>
+        <p>
+          <b>Evidence handling:</b> Contains identity data in live mode. Store
+          privately, restrict access, review retention requirements, and do not
+          commit live reports to public GitHub.
+        </p>
+      </section>
+      <footer>
+        Generated (UTC): 2026-11-06T19:47:28.604760+00:00 · Evidence-only output
+        · Analyst validation required before remediation
+      </footer>
+    </main>
+  </body>
+</html>

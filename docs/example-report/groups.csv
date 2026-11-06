@@ -1,0 +1,6 @@
+﻿group_id,group_name,security_enabled,direct_members
+g-admin,sg-lab-admins,True,1
+g-eng,sg-lab-engineering,True,2
+g-fin,sg-lab-finance,True,1
+g-hr,sg-lab-hr,True,1
+g-it,sg-lab-it,True,3

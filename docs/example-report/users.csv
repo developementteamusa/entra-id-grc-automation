@@ -1,0 +1,9 @@
+﻿id,display_name,user_principal_name,department,job_title,account_enabled
+u-01,Alex Example,alex.admin@example.test,IT,Administrator,True
+u-02,Avery Example,avery.it@example.test,IT,Support Analyst,True
+u-04,Casey Example,casey.eng@example.test,Engineering,Engineer,True
+u-07,Harper Example,harper.hr@example.test,,HR Specialist,True
+u-03,Jordan Example,jordan.it@example.test,IT,IT Specialist,False
+u-06,Morgan Example,morgan.fin@example.test,Finance,Analyst,True
+u-08,Reese Example,reese@example.test,Operations,Coordinator,True
+u-05,Taylor Example,taylor.eng@example.test,Engineering,Developer,True

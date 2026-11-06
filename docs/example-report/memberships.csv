@@ -1,0 +1,9 @@
+﻿group_name,group_id,member_id,member_type,display_name,upn
+sg-lab-admins,g-admin,u-01,#microsoft.graph.user,Alex Example,alex.admin@example.test
+sg-lab-engineering,g-eng,u-04,#microsoft.graph.user,Casey Example,casey.eng@example.test
+sg-lab-engineering,g-eng,u-05,#microsoft.graph.user,Taylor Example,taylor.eng@example.test
+sg-lab-finance,g-fin,u-06,#microsoft.graph.user,Morgan Example,morgan.fin@example.test
+sg-lab-hr,g-hr,u-07,#microsoft.graph.user,Harper Example,harper.hr@example.test
+sg-lab-it,g-it,u-01,#microsoft.graph.user,Alex Example,alex.admin@example.test
+sg-lab-it,g-it,u-02,#microsoft.graph.user,Avery Example,avery.it@example.test
+sg-lab-it,g-it,u-03,#microsoft.graph.user,Jordan Example,jordan.it@example.test

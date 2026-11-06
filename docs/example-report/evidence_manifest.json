@@ -1,0 +1,13 @@
+{
+  "generated_at_utc": "2026-11-06T19:47:28.604760+00:00",
+  "source": "demo",
+  "sha256": {
+    "users.csv": "a2520e64a8413b22035c7c505f6a6ee8e38019be0e1e9bd17b7e71e0348a76d5",
+    "groups.csv": "03f6a02873bece995525afe5dc84a0106562b2049dbda48285667c1b981e20c5",
+    "memberships.csv": "40d94ec5b984e7d27bba5ddd2d3d58c3815da41a0fff63d5b165a9db3cafdf3c",
+    "findings.csv": "d53b77caab7199db401702566b27e9ab39cfb1531443b28fcd36047dbdfbc147",
+    "audit.json": "103774f6d55c6eda6edd636f5f484095d275185492a9197fbd6210d4f30ab2fb",
+    "audit.html": "81213258f4174f8a2c55f24fe81bf3dfac21a19a27050fc192ca548993f75a6f"
+  },
+  "note": "SHA-256 detects later file alteration but does not prove collector identity or trusted capture time."
+}
